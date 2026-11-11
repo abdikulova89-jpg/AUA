@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f8f5" />
+  <meta name="description" content="Поиск и сравнение квартир в Астане по вашим потребностям." />
+  <title>Рядом — поиск квартиры в Астане</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Рядом — главная"><span class="brand-mark">р</span><span>рядом<span class="brand-dot">.</span></span></a>
+    <nav><a class="active" href="#search">Поиск</a><a href="#results">Сравнение</a><a href="#guide">Гид по городу</a></nav>
+    <button class="saved-button" id="savedToggle"><span>♡</span> Избранное <b id="savedCount">0</b></button>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> АСТАНА · ПОИСК ЖИЛЬЯ</p><h1>Найдите квартиру,<br /><em>в которой всё рядом.</em></h1><p class="hero-sub">Сравнивайте варианты не только по цене — смотрите, как удобно будет жить именно вам.</p></div>
+      <div class="hero-stats"><div><strong>01</strong><span>выберите важное</span></div><div><strong>02</strong><span>сравните район</span></div><div><strong>03</strong><span>откройте на Крыше</span></div></div>
+    </section>
+    <section class="search-panel" id="search">
+      <div class="section-heading"><div><p class="eyebrow">НАСТРОЙТЕ ПОИСК</p><h2>Что для вас важно?</h2></div><button class="text-button" id="resetFilters">Сбросить фильтры ↺</button></div>
+      <div class="filter-grid">
+        <label class="field"><span>Я хочу</span><select id="deal"><option value="buy">Купить</option><option value="rent">Снять</option></select></label>
+        <label class="field"><span>Бюджет до</span><div class="input-wrap"><input id="budget" type="number" min="0" step="1000000" value="45000000" /><small>₸</small></div></label>
+        <label class="field"><span>Комнат</span><select id="rooms"><option value="any">Любое количество</option><option value="1">1 комната</option><option value="2">2 комнаты</option><option value="3">3 комнаты</option><option value="4">4+ комнаты</option></select></label>
+        <label class="field"><span>Район</span><select id="district"><option value="any">Вся Астана</option><option>Есиль</option><option>Нура</option><option>Сарыарка</option><option>Алматы</option><option>Байқоңыр</option></select></label>
+      </div>
+      <div class="needs-row"><span class="needs-title">Рядом должно быть</span><div class="chips" id="needChips"><button class="chip selected" data-need="school">⌂ Школа</button><button class="chip" data-need="transit">↗ Транспорт</button><button class="chip" data-need="park">❋ Парк</button><button class="chip" data-need="shop">▦ Магазины</button><button class="chip" data-need="clinic">＋ Поликлиника</button></div><span class="hint">Выберите всё, что важно</span></div>
+      <div class="search-footer"><p>Подборка помогает сравнить локации и условия — детали объявления уточняйте у продавца.</p><button id="searchBtn" class="primary-button">Показать варианты <span>→</span></button></div>
+    </section>
+    <section class="results-section" id="results">
+      <div class="results-heading"><div><p class="eyebrow">ВАШИ ВАРИАНТЫ</p><h2>Сравнение объявлений <span class="count-pill" id="resultCount">4</span></h2><p class="muted">Сначала — наиболее подходящие под ваши условия</p></div><a class="krisha-link" id="krishaSearch" href="https://krisha.kz/prodazha/kvartiry/astana/" target="_blank" rel="noopener">Все объявления на Krisha.kz ↗</a></div>
+      <div class="table-wrap"><table><thead><tr><th class="property-col">Квартира</th><th>Цена</th><th>Площадь<br /><small>м²</small></th><th>Район</th><th>До школы</th><th>Транспорт</th><th>Подходит</th><th></th></tr></thead><tbody id="listingsBody"></tbody></table></div>
+      <div class="table-note"><span class="info-icon">i</span><span>Карточки ниже — демонстрационные примеры, не актуальные объявления. Официальная база Krisha.kz защищена от автоматического извлечения; чтобы показывать реальные объявления внутри сайта, понадобится разрешённый источник данных. Пока можно открыть поиск на Krisha.kz и сравнивать ссылки вручную.</span></div>
+    </section>
+    <section class="guide-section" id="guide"><div><p class="eyebrow">ПЕРВЫЙ РАЗ В АСТАНЕ?</p><h2>Город простыми ориентирами</h2><p class="muted">Не знаете район — начните с привычного маршрута и того, что должно быть рядом.</p></div><div class="guide-cards"><article><span class="guide-icon blue">↗</span><h3>Ежедневные поездки</h3><p>Проверьте, как добираться до работы или учёбы. В Астане есть автобусы, но время в пути сильно зависит от маршрута и пробок.</p></article><article><span class="guide-icon green">⌂</span><h3>Семья и школа</h3><p>Уточните конкретную школу, закрепление по адресу и наличие мест — близость на карте не гарантирует зачисление.</p></article><article><span class="guide-icon orange">❋</span><h3>Комфорт района</h3><p>Посмотрите на карте магазины, поликлинику и зелёные зоны. Зимой учитывайте ветер, расстояния и доступность остановок.</p></article></div></section>
+    <footer><a class="brand" href="#top"><span class="brand-mark">р</span><span>рядом<span class="brand-dot">.</span></span></a><span>Помогаем выбрать место для жизни в Астане</span><span>Источник объявлений: <a href="https://krisha.kz/catalog/astana/" target="_blank" rel="noopener">Krisha.kz ↗</a></span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
